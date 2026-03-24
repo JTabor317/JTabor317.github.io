@@ -1,0 +1,28 @@
+<svg width="1600" height="1000" viewBox="0 0 1600 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="1000" rx="48" fill="#F8F2E8"/>
+  <rect x="104" y="95" width="1392" height="810" rx="34" fill="#13222A"/>
+  <rect x="144" y="139" width="1312" height="722" rx="28" fill="#1D3340"/>
+  <rect x="196" y="195" width="416" height="610" rx="24" fill="#FFF8EE"/>
+  <rect x="652" y="195" width="752" height="610" rx="24" fill="#112631"/>
+  <rect x="244" y="257" width="318" height="72" rx="18" fill="#F0D4C6"/>
+  <rect x="244" y="359" width="318" height="72" rx="18" fill="#D8E8EE"/>
+  <rect x="244" y="461" width="318" height="72" rx="18" fill="#F3E9D8"/>
+  <rect x="244" y="563" width="318" height="72" rx="18" fill="#F0D4C6"/>
+  <rect x="736" y="266" width="167" height="93" rx="22" fill="#F5DDC6"/>
+  <rect x="950" y="266" width="167" height="93" rx="22" fill="#D8E9EE"/>
+  <rect x="1164" y="266" width="167" height="93" rx="22" fill="#F3E9D8"/>
+  <rect x="842" y="463" width="167" height="93" rx="22" fill="#F5DDC6"/>
+  <rect x="1056" y="463" width="167" height="93" rx="22" fill="#D8E9EE"/>
+  <path d="M903 359L842 463" stroke="#C76846" stroke-width="12" stroke-linecap="round"/>
+  <path d="M1034 359L1094 463" stroke="#6A99AB" stroke-width="12" stroke-linecap="round"/>
+  <path d="M1247 359L1140 463" stroke="#E2BF8C" stroke-width="12" stroke-linecap="round"/>
+  <path d="M820 556L948 669" stroke="#C76846" stroke-width="12" stroke-linecap="round"/>
+  <path d="M1139 556L1011 669" stroke="#6A99AB" stroke-width="12" stroke-linecap="round"/>
+  <rect x="789" y="655" width="380" height="86" rx="22" fill="#FFF8EE"/>
+  <text x="835" y="709" fill="#8F3F2A" font-family="Georgia, serif" font-size="34" font-weight="700">Encounter flow tool</text>
+  <text x="245" y="241" fill="#8F3F2A" font-family="Georgia, serif" font-size="44" font-weight="700">Ritual Workshop</text>
+  <text x="245" y="308" fill="#8F3F2A" font-family="Consolas, monospace" font-size="28">spawn groups</text>
+  <text x="245" y="410" fill="#2F5F73" font-family="Consolas, monospace" font-size="28">arena bounds</text>
+  <text x="245" y="512" fill="#686050" font-family="Consolas, monospace" font-size="28">validation checks</text>
+  <text x="245" y="614" fill="#8F3F2A" font-family="Consolas, monospace" font-size="28">loot tables</text>
+</svg>

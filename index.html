@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="description"
+    content="A clean GitHub Pages portfolio for showcasing game development projects, screenshots, and code snippets."
+  >
+  <title>TabordaGoat | Game Dev Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="site-header">
+      <a class="brand" href="#top">TabordaGoat</a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="#projects">Projects</a>
+        <a href="#about">About Me</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Game Developer Portfolio</p>
+          <h1>Readable systems, strong game feel, and projects that show their work.</h1>
+          <p class="hero-text">
+            This starter site is built for GitHub Pages and gives you a clean place to show gameplay
+            screenshots, short write-ups, and code samples without feeling like a plain resume.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#projects">View Projects</a>
+            <a class="button button-secondary" href="#about">About Me</a>
+          </div>
+          <ul class="hero-points" aria-label="Core strengths">
+            <li>Unity and C# prototypes</li>
+            <li>UI, tooling, and game feel</li>
+            <li>Built to expand as your portfolio grows</li>
+          </ul>
+        </div>
+
+        <aside class="hero-panel" aria-label="Portfolio preview">
+          <div class="panel-chip">Featured Structure</div>
+          <div class="panel-block">
+            <p class="panel-title">What each project can hold</p>
+            <ul class="panel-list">
+              <li>Gameplay screenshots or key art</li>
+              <li>Short design and technical breakdowns</li>
+              <li>Code snippets with copy buttons</li>
+            </ul>
+          </div>
+          <div class="panel-block panel-code">
+            <p class="panel-title">Example snippet</p>
+            <pre><code>if (player.IsGrounded && input.JumpPressed)
+{
+    velocity.y = jumpForce;
+    stateMachine.ChangeState(PlayerState.Airborne);
+}</code></pre>
+          </div>
+        </aside>
+      </section>
+
+      <section class="section" id="projects">
+        <div class="section-heading">
+          <p class="eyebrow">Selected Work</p>
+          <h2>Projects</h2>
+          <p>
+            Each project card supports multiple images, a short write-up, tech tags, and an embedded
+            code sample. Duplicate a card and swap the text, screenshots, and code whenever you add
+            something new.
+          </p>
+        </div>
+
+        <div class="project-stack">
+          <!-- Duplicate a .project-card block to add more projects -->
+          <article class="project-card">
+            <div class="project-copy">
+              <div class="project-meta">
+                <span class="pill">Unity / C#</span>
+                <span class="project-status">Movement Prototype</span>
+              </div>
+              <h3>Skyline Ascent</h3>
+              <p class="project-lead">
+                A fast traversal prototype focused on jump buffering, air control, and strong visual
+                readability at speed.
+              </p>
+              <p>
+                Use this area to describe your role, what problem you were solving, and what makes the
+                project interesting. Recruiters and collaborators usually care about both the result and
+                the thinking behind it.
+              </p>
+              <ul class="tag-list" aria-label="Project skills">
+                <li>Movement Systems</li>
+                <li>Camera Polish</li>
+                <li>Level Blockout</li>
+              </ul>
+            </div>
+
+            <div class="project-showcase">
+              <div class="project-gallery">
+                <figure class="media-card media-featured">
+                  <img src="assets/skyline-ascent.svg" alt="Stylized placeholder art for the Skyline Ascent project">
+                  <figcaption>Main screenshot, key art, or a gif export can live here.</figcaption>
+                </figure>
+                <figure class="media-card">
+                  <img src="assets/skyline-ui.svg" alt="Stylized placeholder interface image for the Skyline Ascent project">
+                  <figcaption>Secondary images are useful for UI, level flow, or mechanic callouts.</figcaption>
+                </figure>
+              </div>
+
+              <section class="code-snippet" aria-label="Skyline Ascent code sample">
+                <div class="snippet-header">
+                  <div>
+                    <p class="snippet-label">C# movement snippet</p>
+                    <p class="snippet-caption">A short sample is enough to show style and clarity.</p>
+                  </div>
+                  <button class="copy-snippet" type="button">Copy</button>
+                </div>
+                <pre><code>public void QueueJump(float inputTime)
+{
+    lastJumpPressTime = inputTime;
+}
+
+private void HandleJump()
+{
+    bool bufferedJump = Time.time - lastJumpPressTime &lt;= jumpBufferWindow;
+    bool coyoteJump = Time.time - lastGroundedTime &lt;= coyoteTimeWindow;
+
+    if (bufferedJump &amp;&amp; coyoteJump)
+    {
+        velocity.y = jumpForce;
+        lastJumpPressTime = float.NegativeInfinity;
+    }
+}</code></pre>
+              </section>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-copy">
+              <div class="project-meta">
+                <span class="pill">Narrative Tools</span>
+                <span class="project-status">Dialogue System</span>
+              </div>
+              <h3>Last Call at Dawn</h3>
+              <p class="project-lead">
+                A story-first exploration project with branching conversations, mood-driven lighting, and
+                an emphasis on readable dialogue flow.
+              </p>
+              <p>
+                This slot works well for narrative work, puzzle games, or jam projects. You can keep the
+                summary short and still make the page feel rich by pairing it with a screenshot and a small
+                piece of production code.
+              </p>
+              <ul class="tag-list" aria-label="Project skills">
+                <li>Dialogue Systems</li>
+                <li>State Machines</li>
+                <li>Player Choice Tracking</li>
+              </ul>
+            </div>
+
+            <div class="project-showcase">
+              <div class="project-gallery">
+                <figure class="media-card media-featured">
+                  <img src="assets/last-call-at-dawn.svg" alt="Stylized placeholder art for the Last Call at Dawn project">
+                  <figcaption>Swap this with a scene still, dialogue screenshot, or trailer frame.</figcaption>
+                </figure>
+              </div>
+
+              <section class="code-snippet" aria-label="Last Call at Dawn code sample">
+                <div class="snippet-header">
+                  <div>
+                    <p class="snippet-label">Dialogue branching logic</p>
+                    <p class="snippet-caption">Short snippets work best when they reveal one clear idea.</p>
+                  </div>
+                  <button class="copy-snippet" type="button">Copy</button>
+                </div>
+                <pre><code>public DialogueNode GetNextNode(DialogueChoice choice)
+{
+    if (!choice.RequirementsMet(playerFlags))
+    {
+        return fallbackNode;
+    }
+
+    visitedChoices.Add(choice.Id);
+    return nodeLookup[choice.NextNodeId];
+}</code></pre>
+              </section>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-copy">
+              <div class="project-meta">
+                <span class="pill">Editor Tooling</span>
+                <span class="project-status">Pipeline Support</span>
+              </div>
+              <h3>Ritual Workshop</h3>
+              <p class="project-lead">
+                An internal Unity tool for assembling encounters faster, validating data, and reducing
+                repetitive setup during iteration.
+              </p>
+              <p>
+                Including tools in your portfolio is valuable. It shows engineering judgment, iteration
+                habits, and an ability to improve team velocity instead of only shipping player-facing work.
+              </p>
+              <ul class="tag-list" aria-label="Project skills">
+                <li>Custom Inspectors</li>
+                <li>Workflow Automation</li>
+                <li>Content Validation</li>
+              </ul>
+            </div>
+
+            <div class="project-showcase">
+              <div class="project-gallery">
+                <figure class="media-card media-featured">
+                  <img src="assets/ritual-workshop.svg" alt="Stylized placeholder art for the Ritual Workshop project">
+                  <figcaption>Tool screenshots help communicate process and problem solving.</figcaption>
+                </figure>
+              </div>
+
+              <section class="code-snippet" aria-label="Ritual Workshop code sample">
+                <div class="snippet-header">
+                  <div>
+                    <p class="snippet-label">Validation helper</p>
+                    <p class="snippet-caption">Use this area for editor scripts, shaders, or gameplay code.</p>
+                  </div>
+                  <button class="copy-snippet" type="button">Copy</button>
+                </div>
+                <pre><code>public static IEnumerable&lt;string&gt; ValidateEncounter(EncounterData data)
+{
+    if (data.SpawnPoints.Count == 0)
+    {
+        yield return "Encounter needs at least one spawn point.";
+    }
+
+    if (data.Waves.Any(wave =&gt; wave.Enemies.Count == 0))
+    {
+        yield return "Each wave needs at least one enemy entry.";
+    }
+}</code></pre>
+              </section>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="about">
+        <div class="section-heading">
+          <p class="eyebrow">About Me</p>
+          <h2>A short section that feels personal without getting crowded</h2>
+        </div>
+
+        <div class="about-layout">
+          <article class="about-card about-card-primary">
+            <h3>Who you are</h3>
+            <p>
+              Replace this with your own voice. A strong portfolio intro usually says what kind of games
+              you like building, what disciplines you touch most often, and what kinds of teams or problems
+              energize you.
+            </p>
+            <p>
+              Example: "I'm a game developer focused on tactile mechanics, readable interfaces, and tools
+              that help ideas move from prototype to playable fast."
+            </p>
+          </article>
+
+          <article class="about-card">
+            <h3>What you bring</h3>
+            <ul class="about-list">
+              <li>Designing and implementing gameplay systems in Unity</li>
+              <li>Building UI and interaction flows that are easy to read</li>
+              <li>Creating tools that speed up iteration for solo or team projects</li>
+              <li>Breaking down technical work into player-facing outcomes</li>
+            </ul>
+          </article>
+
+          <article class="about-card">
+            <h3>Nice things to add later</h3>
+            <ul class="about-list">
+              <li>A resume link or downloadable PDF</li>
+              <li>Itch.io, GitHub, LinkedIn, or Steam buttons</li>
+              <li>A contact section or email button</li>
+              <li>Playable web builds or short trailers</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Built for GitHub Pages. Update the text, swap the images, and make it yours.</p>
+      <p>&copy; <span id="year">2026</span> TabordaGoat</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

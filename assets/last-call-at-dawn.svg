@@ -1,0 +1,22 @@
+<svg width="1600" height="1000" viewBox="0 0 1600 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="1000" rx="48" fill="url(#paint0_linear)"/>
+  <circle cx="1177" cy="239" r="126" fill="#FFF0D8" fill-opacity="0.88"/>
+  <rect x="160" y="167" width="1280" height="666" rx="38" fill="#17384A" fill-opacity="0.7"/>
+  <path d="M160 627C364 577 470 530 592 432C714 334 820 279 969 296C1130 315 1275 502 1440 470V833H160V627Z" fill="#1F4D61"/>
+  <path d="M160 670C305 631 409 577 545 460C669 354 843 347 963 397C1083 446 1212 592 1440 577V833H160V670Z" fill="#C15D45"/>
+  <rect x="249" y="565" width="1102" height="170" rx="28" fill="#FFF8EE"/>
+  <circle cx="338" cy="650" r="54" fill="#D6A88D"/>
+  <rect x="424" y="604" width="784" height="20" rx="10" fill="#D7E8EE"/>
+  <rect x="424" y="649" width="691" height="20" rx="10" fill="#E3D3C2"/>
+  <rect x="424" y="694" width="524" height="20" rx="10" fill="#D7E8EE"/>
+  <rect x="210" y="192" width="392" height="120" rx="26" fill="#FFF7EC" fill-opacity="0.92"/>
+  <text x="254" y="257" fill="#8F3F2A" font-family="Georgia, serif" font-size="52" font-weight="700">Last Call at Dawn</text>
+  <text x="255" y="565" fill="#59717D" font-family="Consolas, monospace" font-size="28">branching dialogue preview</text>
+  <defs>
+    <linearGradient id="paint0_linear" x1="131" y1="57" x2="1446" y2="933" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F7E6CF"/>
+      <stop offset="0.48" stop-color="#E5EDF2"/>
+      <stop offset="1" stop-color="#E9C9AE"/>
+    </linearGradient>
+  </defs>
+</svg>

@@ -1,0 +1,24 @@
+<svg width="1600" height="1000" viewBox="0 0 1600 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="1000" rx="48" fill="#FAF3E8"/>
+  <rect x="101" y="98" width="1398" height="804" rx="34" fill="#204356"/>
+  <rect x="145" y="145" width="1310" height="716" rx="26" fill="#11303D"/>
+  <rect x="201" y="211" width="712" height="413" rx="22" fill="url(#paint0_linear)"/>
+  <rect x="957" y="211" width="298" height="114" rx="20" fill="#F5DDC6"/>
+  <rect x="957" y="353" width="298" height="114" rx="20" fill="#D8E9EE"/>
+  <rect x="957" y="495" width="298" height="114" rx="20" fill="#F3E9D8"/>
+  <rect x="957" y="637" width="298" height="114" rx="20" fill="#F5DDC6"/>
+  <path d="M267 531C329 472 383 453 435 449C492 444 546 489 614 465C687 440 760 344 845 305V581H267V531Z" fill="#F6E6CA"/>
+  <path d="M268 555C360 470 458 493 533 461C598 433 667 340 845 366V625H268V555Z" fill="#C76846"/>
+  <rect x="306" y="673" width="376" height="97" rx="22" fill="#F7EFE4"/>
+  <text x="339" y="733" fill="#8F3F2A" font-family="Georgia, serif" font-size="36" font-weight="700">UI and HUD pass</text>
+  <text x="1003" y="280" fill="#8F3F2A" font-family="Consolas, monospace" font-size="28">speed readout</text>
+  <text x="1003" y="422" fill="#2F5F73" font-family="Consolas, monospace" font-size="28">checkpoint data</text>
+  <text x="1003" y="564" fill="#5A5A51" font-family="Consolas, monospace" font-size="28">accessibility notes</text>
+  <text x="1003" y="706" fill="#8F3F2A" font-family="Consolas, monospace" font-size="28">camera tuning</text>
+  <defs>
+    <linearGradient id="paint0_linear" x1="288" y1="211" x2="872" y2="585" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#6A99AB"/>
+      <stop offset="1" stop-color="#305869"/>
+    </linearGradient>
+  </defs>
+</svg>

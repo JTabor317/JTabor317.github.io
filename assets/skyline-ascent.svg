@@ -1,0 +1,19 @@
+<svg width="1600" height="1000" viewBox="0 0 1600 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="1000" rx="48" fill="url(#paint0_linear)"/>
+  <circle cx="1288" cy="206" r="118" fill="#FFF2DF" fill-opacity="0.9"/>
+  <path d="M0 770C131 707 241 672 330 666C445 657 551 699 676 659C832 608 905 497 1037 498C1170 500 1294 632 1600 553V1000H0V770Z" fill="#123648" fill-opacity="0.76"/>
+  <path d="M0 814C162 709 331 730 473 708C611 686 760 582 920 611C1091 642 1242 813 1600 684V1000H0V814Z" fill="#2B6071" fill-opacity="0.82"/>
+  <path d="M145 748L382 584L507 653L654 466L832 577L1073 357L1277 517L1452 372V884H145V748Z" fill="#F5E1B4"/>
+  <rect x="167" y="127" width="358" height="164" rx="28" fill="#FFF6EA" fill-opacity="0.92"/>
+  <text x="209" y="193" fill="#8F3F2A" font-family="Georgia, serif" font-size="52" font-weight="700">Skyline Ascent</text>
+  <text x="209" y="246" fill="#48606D" font-family="Consolas, monospace" font-size="28">Momentum platforming prototype</text>
+  <rect x="1014" y="707" width="349" height="103" rx="26" fill="#183B4B"/>
+  <text x="1070" y="772" fill="#FFF0E0" font-family="Consolas, monospace" font-size="34">dash + wall jump</text>
+  <defs>
+    <linearGradient id="paint0_linear" x1="120" y1="72" x2="1447" y2="943" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F5D5BB"/>
+      <stop offset="0.5" stop-color="#E6F0F0"/>
+      <stop offset="1" stop-color="#D7B698"/>
+    </linearGradient>
+  </defs>
+</svg>
