@@ -18,6 +18,11 @@ if (year) {
   year.textContent = new Date().getFullYear();
 }
 
+if (lightbox) {
+  lightbox.hidden = true;
+  lightbox.setAttribute("aria-hidden", "true");
+}
+
 copyButtons.forEach((button) => {
   button.addEventListener("click", async () => {
     const snippet = button.closest(".code-snippet");
@@ -104,7 +109,7 @@ function closeLightbox() {
   activeIndex = 0;
 
   if (lightboxImage) {
-    lightboxImage.src = "";
+    lightboxImage.removeAttribute("src");
     lightboxImage.alt = "";
   }
 
