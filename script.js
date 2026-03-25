@@ -19,7 +19,8 @@ if (year) {
 
 copyButtons.forEach((button) => {
   button.addEventListener("click", async () => {
-    const code = button.closest(".code-snippet")?.querySelector("code");
+    const snippet = button.closest(".code-snippet");
+    const code = snippet ? snippet.querySelector("code") : null;
 
     if (!code) {
       return;
@@ -126,32 +127,30 @@ function stepLightbox(offset) {
 }
 
 document.querySelectorAll(".project-card").forEach((projectCard) => {
-  const figures = Array.from(projectCard.querySelectorAll(".media-card"));
-  const galleryItems = figures
-    .map((figure) => {
-      const image = figure.querySelector("img");
-      const caption = figure.querySelector("figcaption");
+  const triggers = Array.from(projectCard.querySelectorAll(".media-trigger"));
+  const galleryItems = triggers
+    .map((trigger) => {
+      const figure = trigger.closest(".media-card");
+      const image = trigger.querySelector("img");
+      const caption = figure ? figure.querySelector("figcaption") : null;
 
       if (!image) {
         return null;
       }
 
       return {
-        src: image.getAttribute("src"),
+        src: trigger.getAttribute("href") || image.getAttribute("src"),
         alt: image.getAttribute("alt") || "",
-        caption: caption?.textContent.trim() || image.getAttribute("alt") || "",
+        caption: caption ? caption.textContent.trim() : image.getAttribute("alt") || "",
       };
     })
-    .filter(Boolean);
+    .filter(function (item) {
+      return Boolean(item);
+    });
 
-  figures.forEach((figure, index) => {
-    const trigger = figure.querySelector(".media-trigger");
-
-    if (!trigger) {
-      return;
-    }
-
-    trigger.addEventListener("click", () => {
+  triggers.forEach((trigger, index) => {
+    trigger.addEventListener("click", (event) => {
+      event.preventDefault();
       openLightbox(galleryItems, index, trigger);
     });
   });

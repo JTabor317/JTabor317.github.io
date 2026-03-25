@@ -49,52 +49,53 @@
         <div class="project-stack">
           <!-- Duplicate a .project-card block to add more projects -->
           <article class="project-card">
-            <div class="project-copy">
-              <div class="project-meta">
-                <span class="pill">Unity / C#</span>
-                <span class="project-status">Intro to Game Dev Final Project</span>
+            <div class="project-top">
+              <div class="project-copy">
+                <div class="project-meta">
+                  <span class="pill">Unity / C#</span>
+                  <span class="project-status">Intro to Game Dev Final Project</span>
+                </div>
+                <h3>Windowed</h3>
+                <p class="project-lead">
+                  A puzzle game based on the icons in the corner of a program window. 2D environment with a character
+                  that has the ability to push, close, resize, and minimize blocks to solve the puzzles.
+                </p>
+                <p>
+                  I worked on designing and implementing the core puzzle systems, focusing on how players interact with
+                  the environment through both character movement and direct cursor input.
+                  The main challenge was creating intuitive mechanics based on familiar UI symbols (minimize, close,
+                  resize) while ensuring they translated into meaningful and solvable puzzle interactions.
+                  To address this, I helped develop a grid-based system that simplified movement and interactions,
+                  reducing edge cases and allowing for more controlled puzzle design.
+                  I also contributed to implementing core mechanics such as clickable blocks, state-changing buttons,
+                  and environmental constraints like glass barriers, all of which were introduced progressively to guide
+                  player understanding.
+                  One key design consideration was preventing soft-lock scenarios, which led to the addition of a reset
+                  mechanic and more intentional level design.
+                  This project was interesting to work on as it had the challenge of conveying what UI elements would do
+                  in a gameplay scenario while still making them feel satisfying and fun to interact with.
+                </p>
+                <ul class="tag-list" aria-label="Project skills">
+                  <li>Movement Systems</li>
+                  <li>Interaction Design</li>
+                </ul>
               </div>
-              <h3>Windowed</h3>
-              <p class="project-lead">
-                A puzzle game based on the icons in the corner of a program window. 2D environment with a character
-                that has the ability to push, close, resize, and minimize blocks to solve the puzzles.
-              </p>
-              <p>
-                I worked on designing and implementing the core puzzle systems, focusing on how players interact with
-                the environment through both character movement and direct cursor input.
-                The main challenge was creating intuitive mechanics based on familiar UI symbols (minimize, close,
-                resize) while ensuring they translated into meaningful and solvable puzzle interactions.
-                To address this, I helped develop a grid-based system that simplified movement and interactions,
-                reducing edge cases and allowing for more controlled puzzle design.
-                I also contributed to implementing core mechanics such as clickable blocks, state-changing buttons,
-                and environmental constraints like glass barriers, all of which were introduced progressively to guide
-                player understanding.
-                One key design consideration was preventing soft-lock scenarios, which led to the addition of a reset
-                mechanic and more intentional level design.
-                This project was interesting to work on as it had the challenge of conveying what UI elements would do
-                in a gameplay scenario while still making them feel satisfying and fun to interact with.
 
-              </p>
-              <ul class="tag-list" aria-label="Project skills">
-                <li>Movement Systems</li>
-                <li>Interaction Design</li>
-              </ul>
-            </div>
-
-            <div class="project-showcase">
-              <div class="project-gallery">
-                <figure class="media-card media-featured">
-                  <button class="media-trigger" type="button" aria-label="Open Windowed screenshot">
-                    <img src="assets/windowedss.png" alt="In-game screen shot of a puzzle">
-                  </button>
-                  <figcaption>In-game screen shot of one of the puzzles.</figcaption>
-                </figure>
-                <figure class="media-card">
-                  <button class="media-trigger" type="button" aria-label="Open Windowed level layout">
-                    <img src="assets/windowedlevel1.png" alt="Full level 1">
-                  </button>
-                  <figcaption>Full level 1 layout.</figcaption>
-                </figure>
+              <div class="project-showcase">
+                <div class="project-gallery">
+                  <figure class="media-card media-featured">
+                    <a class="media-trigger" href="assets/windowedss.png" aria-label="Open Windowed screenshot">
+                      <img src="assets/windowedss.png" alt="In-game screen shot of a puzzle">
+                    </a>
+                    <figcaption>In-game screen shot of one of the puzzles.</figcaption>
+                  </figure>
+                  <figure class="media-card">
+                    <a class="media-trigger" href="assets/windowedlevel1.png" aria-label="Open Windowed level layout">
+                      <img src="assets/windowedlevel1.png" alt="Full level 1">
+                    </a>
+                    <figcaption>Full level 1 layout.</figcaption>
+                  </figure>
+                </div>
               </div>
             </div>
 
@@ -173,40 +174,60 @@
     }
 }</code></pre>
             </section>
+
+            <section class="project-video" aria-label="Windowed gameplay video">
+              <div class="video-header">
+                <div>
+                  <p class="video-label">Gameplay Video</p>
+                  <p class="video-caption">Swap the placeholder iframe below with a YouTube or Vimeo embed.</p>
+                </div>
+              </div>
+              <div class="video-frame">
+                <iframe
+                  title="Windowed gameplay video"
+                  loading="lazy"
+                  allowfullscreen
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  srcdoc="<!DOCTYPE html><html lang='en'><body style='margin:0;display:grid;place-items:center;min-height:100vh;background:#11202a;color:#f7efe4;font-family:Trebuchet MS,Segoe UI,sans-serif;'><div style='text-align:center;padding:2rem;line-height:1.6;'><strong style='display:block;font-size:1.2rem;margin-bottom:0.75rem;'>Video Embed Placeholder</strong><span>Replace this iframe with your project video embed URL.</span></div></body></html>"
+                ></iframe>
+              </div>
+            </section>
           </article>
 
           <article class="project-card">
-            <div class="project-copy">
-              <div class="project-meta">
-                <span class="pill">Narrative Tools</span>
-                <span class="project-status">Dialogue System</span>
+            <div class="project-top">
+              <div class="project-copy">
+                <div class="project-meta">
+                  <span class="pill">Narrative Tools</span>
+                  <span class="project-status">Dialogue System</span>
+                </div>
+                <h3>Last Call at Dawn</h3>
+                <p class="project-lead">
+                  A story-first exploration project with branching conversations, mood-driven lighting, and
+                  an emphasis on readable dialogue flow.
+                </p>
+                <p>
+                  This slot works well for narrative work, puzzle games, or jam projects. You can keep the
+                  summary short and still make the page feel rich by pairing it with a screenshot and a small
+                  piece of production code.
+                </p>
+                <ul class="tag-list" aria-label="Project skills">
+                  <li>Dialogue Systems</li>
+                  <li>State Machines</li>
+                  <li>Player Choice Tracking</li>
+                </ul>
               </div>
-              <h3>Last Call at Dawn</h3>
-              <p class="project-lead">
-                A story-first exploration project with branching conversations, mood-driven lighting, and
-                an emphasis on readable dialogue flow.
-              </p>
-              <p>
-                This slot works well for narrative work, puzzle games, or jam projects. You can keep the
-                summary short and still make the page feel rich by pairing it with a screenshot and a small
-                piece of production code.
-              </p>
-              <ul class="tag-list" aria-label="Project skills">
-                <li>Dialogue Systems</li>
-                <li>State Machines</li>
-                <li>Player Choice Tracking</li>
-              </ul>
-            </div>
 
-            <div class="project-showcase">
-              <div class="project-gallery">
-                <figure class="media-card media-featured">
-                  <button class="media-trigger" type="button" aria-label="Open Last Call at Dawn artwork">
-                    <img src="assets/last-call-at-dawn.svg"
-                      alt="Stylized placeholder art for the Last Call at Dawn project">
-                  </button>
-                  <figcaption>Swap this with a scene still, dialogue screenshot, or trailer frame.</figcaption>
-                </figure>
+              <div class="project-showcase">
+                <div class="project-gallery">
+                  <figure class="media-card media-featured">
+                    <a class="media-trigger" href="assets/last-call-at-dawn.svg" aria-label="Open Last Call at Dawn artwork">
+                      <img src="assets/last-call-at-dawn.svg"
+                        alt="Stylized placeholder art for the Last Call at Dawn project">
+                    </a>
+                    <figcaption>Swap this with a scene still, dialogue screenshot, or trailer frame.</figcaption>
+                  </figure>
+                </div>
               </div>
             </div>
 
@@ -229,39 +250,59 @@
     return nodeLookup[choice.NextNodeId];
 }</code></pre>
             </section>
+
+            <section class="project-video" aria-label="Last Call at Dawn gameplay video">
+              <div class="video-header">
+                <div>
+                  <p class="video-label">Gameplay Video</p>
+                  <p class="video-caption">Drop in your trailer, walkthrough, or prototype footage here.</p>
+                </div>
+              </div>
+              <div class="video-frame">
+                <iframe
+                  title="Last Call at Dawn gameplay video"
+                  loading="lazy"
+                  allowfullscreen
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  srcdoc="<!DOCTYPE html><html lang='en'><body style='margin:0;display:grid;place-items:center;min-height:100vh;background:#11202a;color:#f7efe4;font-family:Trebuchet MS,Segoe UI,sans-serif;'><div style='text-align:center;padding:2rem;line-height:1.6;'><strong style='display:block;font-size:1.2rem;margin-bottom:0.75rem;'>Video Embed Placeholder</strong><span>Replace this iframe with your project video embed URL.</span></div></body></html>"
+                ></iframe>
+              </div>
+            </section>
           </article>
 
           <article class="project-card">
-            <div class="project-copy">
-              <div class="project-meta">
-                <span class="pill">Editor Tooling</span>
-                <span class="project-status">Pipeline Support</span>
+            <div class="project-top">
+              <div class="project-copy">
+                <div class="project-meta">
+                  <span class="pill">Editor Tooling</span>
+                  <span class="project-status">Pipeline Support</span>
+                </div>
+                <h3>Ritual Workshop</h3>
+                <p class="project-lead">
+                  An internal Unity tool for assembling encounters faster, validating data, and reducing
+                  repetitive setup during iteration.
+                </p>
+                <p>
+                  Including tools in your portfolio is valuable. It shows engineering judgment, iteration
+                  habits, and an ability to improve team velocity instead of only shipping player-facing work.
+                </p>
+                <ul class="tag-list" aria-label="Project skills">
+                  <li>Custom Inspectors</li>
+                  <li>Workflow Automation</li>
+                  <li>Content Validation</li>
+                </ul>
               </div>
-              <h3>Ritual Workshop</h3>
-              <p class="project-lead">
-                An internal Unity tool for assembling encounters faster, validating data, and reducing
-                repetitive setup during iteration.
-              </p>
-              <p>
-                Including tools in your portfolio is valuable. It shows engineering judgment, iteration
-                habits, and an ability to improve team velocity instead of only shipping player-facing work.
-              </p>
-              <ul class="tag-list" aria-label="Project skills">
-                <li>Custom Inspectors</li>
-                <li>Workflow Automation</li>
-                <li>Content Validation</li>
-              </ul>
-            </div>
 
-            <div class="project-showcase">
-              <div class="project-gallery">
-                <figure class="media-card media-featured">
-                  <button class="media-trigger" type="button" aria-label="Open Ritual Workshop artwork">
-                    <img src="assets/ritual-workshop.svg"
-                      alt="Stylized placeholder art for the Ritual Workshop project">
-                  </button>
-                  <figcaption>Tool screenshots help communicate process and problem solving.</figcaption>
-                </figure>
+              <div class="project-showcase">
+                <div class="project-gallery">
+                  <figure class="media-card media-featured">
+                    <a class="media-trigger" href="assets/ritual-workshop.svg" aria-label="Open Ritual Workshop artwork">
+                      <img src="assets/ritual-workshop.svg"
+                        alt="Stylized placeholder art for the Ritual Workshop project">
+                    </a>
+                    <figcaption>Tool screenshots help communicate process and problem solving.</figcaption>
+                  </figure>
+                </div>
               </div>
             </div>
 
@@ -285,6 +326,24 @@
         yield return "Each wave needs at least one enemy entry.";
     }
 }</code></pre>
+            </section>
+
+            <section class="project-video" aria-label="Ritual Workshop video demo">
+              <div class="video-header">
+                <div>
+                  <p class="video-label">Video Demo</p>
+                  <p class="video-caption">A short tool walkthrough or timelapse works well here.</p>
+                </div>
+              </div>
+              <div class="video-frame">
+                <iframe
+                  title="Ritual Workshop video demo"
+                  loading="lazy"
+                  allowfullscreen
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  srcdoc="<!DOCTYPE html><html lang='en'><body style='margin:0;display:grid;place-items:center;min-height:100vh;background:#11202a;color:#f7efe4;font-family:Trebuchet MS,Segoe UI,sans-serif;'><div style='text-align:center;padding:2rem;line-height:1.6;'><strong style='display:block;font-size:1.2rem;margin-bottom:0.75rem;'>Video Embed Placeholder</strong><span>Replace this iframe with your project video embed URL.</span></div></body></html>"
+                ></iframe>
+              </div>
             </section>
           </article>
         </div>
