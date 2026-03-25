@@ -2,7 +2,8 @@ const copyButtons = document.querySelectorAll(".copy-snippet");
 const year = document.querySelector("#year");
 const lightbox = document.querySelector("#lightbox");
 const lightboxImage = document.querySelector(".lightbox-image");
-const lightboxCaption = document.querySelector(".lightbox-caption");
+const lightboxTitle = document.querySelector(".lightbox-title");
+const lightboxBlurb = document.querySelector(".lightbox-blurb");
 const lightboxCounter = document.querySelector(".lightbox-counter");
 const lightboxPrev = document.querySelector(".lightbox-prev");
 const lightboxNext = document.querySelector(".lightbox-next");
@@ -42,7 +43,7 @@ copyButtons.forEach((button) => {
 });
 
 function updateLightbox() {
-  if (!lightbox || !lightboxImage || !lightboxCaption || !lightboxCounter) {
+  if (!lightbox || !lightboxImage || !lightboxBlurb || !lightboxCounter) {
     return;
   }
 
@@ -54,7 +55,11 @@ function updateLightbox() {
 
   lightboxImage.src = currentItem.src;
   lightboxImage.alt = currentItem.alt;
-  lightboxCaption.textContent = currentItem.caption;
+  if (lightboxTitle) {
+    lightboxTitle.textContent = currentItem.title;
+  }
+
+  lightboxBlurb.textContent = currentItem.caption;
   lightboxCounter.textContent = `${activeIndex + 1} / ${activeGallery.length}`;
 
   const disableNavigation = activeGallery.length <= 1;
@@ -103,8 +108,12 @@ function closeLightbox() {
     lightboxImage.alt = "";
   }
 
-  if (lightboxCaption) {
-    lightboxCaption.textContent = "";
+  if (lightboxTitle) {
+    lightboxTitle.textContent = "";
+  }
+
+  if (lightboxBlurb) {
+    lightboxBlurb.textContent = "";
   }
 
   if (lightboxCounter) {
@@ -139,6 +148,7 @@ document.querySelectorAll(".project-card").forEach((projectCard) => {
       }
 
       return {
+        title: projectCard.querySelector("h3") ? projectCard.querySelector("h3").textContent.trim() : "Project image",
         src: trigger.getAttribute("href") || image.getAttribute("src"),
         alt: image.getAttribute("alt") || "",
         caption: caption ? caption.textContent.trim() : image.getAttribute("alt") || "",
