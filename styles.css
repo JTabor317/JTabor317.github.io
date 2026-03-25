@@ -125,7 +125,7 @@ pre {
 
 .hero {
   display: grid;
-  grid-template-columns: minmax(0, 1.2fr) minmax(300px, 0.8fr);
+  grid-template-columns: minmax(0, 1fr);
   gap: 1.5rem;
   align-items: center;
   padding: 4rem 0 3rem;
@@ -142,6 +142,7 @@ pre {
 }
 
 .hero-copy {
+  max-width: 56rem;
   padding: clamp(1.75rem, 5vw, 3.25rem);
   border-radius: var(--radius-lg);
 }

@@ -33,165 +33,185 @@
             <a class="button button-secondary" href="#about">About Me</a>
           </div>
         </div>
+      </section>
 
-        <section class="section" id="projects">
-          <div class="section-heading">
-            <p class="eyebrow">Selected Work</p>
-            <h2>Projects</h2>
-            <p>
-              These include solo projects as well as contributions I've made on teams. They mostly come from my time as
-              a student at Georgia Tech or from in my free time. I've tagged what is relevant to each project and what
-              it was made in.
-            </p>
-          </div>
+      <section class="section" id="projects">
+        <div class="section-heading">
+          <p class="eyebrow">Selected Work</p>
+          <h2>Projects</h2>
+          <p>
+            These include solo projects as well as contributions I've made on teams. They mostly come from my time as
+            a student at Georgia Tech or in my free time. I've tagged what is relevant to each project and what
+            it was made in.
+          </p>
+        </div>
 
-          <div class="project-stack">
-            <!-- Duplicate a .project-card block to add more projects -->
-            <article class="project-card">
-              <div class="project-copy">
-                <div class="project-meta">
-                  <span class="pill">Unity / C#</span>
-                  <span class="project-status">Intro to Game Dev Final Project</span>
-                </div>
-                <h3>Windowed</h3>
-                <p class="Lead Developer">
-                  A puzzle game based on the icons in the corner of a program window. 2D environment with a character
-                  that has the ability to push, close, resize, and minimize blocks to solve the puzzles.
-                </p>
-                <p>
-                  I worked on designing and implementing the core puzzle systems, focusing on how players interact with
-                  the environment through both character movement and direct cursor input.
-                  The main challenge was creating intuitive mechanics based on familiar UI symbols (minimize, close,
-                  resize) while ensuring they translated into meaningful and solvable puzzle interactions.
-                  To address this, I helped develop a grid-based system that simplified movement and interactions,
-                  reducing edge cases and allowing for more controlled puzzle design.
-                  I also contributed to implementing core mechanics such as clickable blocks, state-changing buttons,
-                  and environmental constraints like glass barriers, all of which were introduced progressively to guide
-                  player understanding.
-                  One key design consideration was preventing soft-lock scenarios, which led to the addition of a reset
-                  mechanic and more intentional level design.
-                  This project was interesting to work on as it had the challenge of conveying what UI elements would do
-                  in a gameplay scenerio while still making them feel satisfying and fun to interact with.
+        <div class="project-stack">
+          <!-- Duplicate a .project-card block to add more projects -->
+          <article class="project-card">
+            <div class="project-copy">
+              <div class="project-meta">
+                <span class="pill">Unity / C#</span>
+                <span class="project-status">Intro to Game Dev Final Project</span>
+              </div>
+              <h3>Windowed</h3>
+              <p class="project-lead">
+                A puzzle game based on the icons in the corner of a program window. 2D environment with a character
+                that has the ability to push, close, resize, and minimize blocks to solve the puzzles.
+              </p>
+              <p>
+                I worked on designing and implementing the core puzzle systems, focusing on how players interact with
+                the environment through both character movement and direct cursor input.
+                The main challenge was creating intuitive mechanics based on familiar UI symbols (minimize, close,
+                resize) while ensuring they translated into meaningful and solvable puzzle interactions.
+                To address this, I helped develop a grid-based system that simplified movement and interactions,
+                reducing edge cases and allowing for more controlled puzzle design.
+                I also contributed to implementing core mechanics such as clickable blocks, state-changing buttons,
+                and environmental constraints like glass barriers, all of which were introduced progressively to guide
+                player understanding.
+                One key design consideration was preventing soft-lock scenarios, which led to the addition of a reset
+                mechanic and more intentional level design.
+                This project was interesting to work on as it had the challenge of conveying what UI elements would do
+                in a gameplay scenario while still making them feel satisfying and fun to interact with.
 
-                </p>
-                <ul class="tag-list" aria-label="Project skills">
-                  <li>Movement Systems</li>
-                  <li>Interaction Design</li>
-                </ul>
+              </p>
+              <ul class="tag-list" aria-label="Project skills">
+                <li>Movement Systems</li>
+                <li>Interaction Design</li>
+              </ul>
+            </div>
+
+            <div class="project-showcase">
+              <div class="project-gallery">
+                <figure class="media-card media-featured">
+                  <img src="assets/windowedss.png" alt="In-game screen shot of a puzzle">
+                  <figcaption>In-game screen shot of one of the puzzles.</figcaption>
+                </figure>
+                <figure class="media-card">
+                  <img src="assets/windowedlevel1.png" alt="Full level 1">
+                  <figcaption>Full level 1 layout.</figcaption>
+                </figure>
               </div>
 
-              <div class="project-showcase">
-                <div class="project-gallery">
-                  <figure class="media-card media-featured">
-                    <img src="windowedss.png" alt="In-game screen shot of a puzzle">
-                    <figcaption>In-game screen shot of one of the puzzles.</figcaption>
-                  </figure>
-                  <figure class="media-card">
-                    <img src="windowedlevel1.png" alt="Full level 1">
-                    <figcaption>Full level 1 layout.</figcaption>
-                  </figure>
-                </div>
-
-                <section class="code-snippet" aria-label="Skyline Ascent code sample">
-                  <div class="snippet-header">
-                    <div>
-                      <p class="snippet-label">C# movement snippet</p>
-                      <p class="snippet-caption">A short sample is enough to show style and clarity.</p>
-                    </div>
-                    <button class="copy-snippet" type="button">Copy</button>
+              <section class="code-snippet" aria-label="Windowed code sample">
+                <div class="snippet-header">
+                  <div>
+                    <p class="snippet-label">C# movement snippet</p>
+                    <p class="snippet-caption">A short sample is enough to show style and clarity.</p>
                   </div>
-                  <pre><code>public void TryStep(Vector2 inputDir)
+                  <button class="copy-snippet" type="button">Copy</button>
+                </div>
+                <pre><code>public void TryStep(Vector2 inputDir)
 {
-if (isMoving || mytilemap == null)
-    retu
-// snap to cardinal direction
-Vector2Int dir = ToCardinal(inputDir);
-if (dir == Vector2Int.zero)
-    retu
-// current cell
-Vector3Int currentCell = mytilemap.WorldToCell(transform.position);
-Vector3Int nextCell = currentCell + new Vector3Int(dir.x, dir.y, 0); 
-// wall check
-if (IsBlocked(nextCell))
-    retu
-// check for pushable
-Pushable blockInFront = FindPushableInCell(nextCell);
+    if (isMoving || mytilemap == null)
+        return;
 
-if (blockInFront != null)
-{
-    Clickable cl = blockInFront.GetComponent<Clickable>(); //get a clickable behavior bc all the stuff is stored in that i guess
-    // if not pushable, cant move
-    if ((cl == null) || (!cl.IsMinimized()))
+    // Snap to cardinal direction.
+    Vector2Int dir = ToCardinal(inputDir);
+    if (dir == Vector2Int.zero)
+        return;
+
+    // Current cell.
+    Vector3Int currentCell = mytilemap.WorldToCell(transform.position);
+    Vector3Int nextCell = currentCell + new Vector3Int(dir.x, dir.y, 0);
+
+    // Wall check.
+    if (IsBlocked(nextCell))
+        return;
+
+    // Check for pushable.
+    Pushable blockInFront = FindPushableInCell(nextCell);
+
+    if (blockInFront != null)
     {
-        Vector2Int nextBlockScalers = new Vector2Int(1,1);
-        if (cl != null) //Remove Old Effect Tile Behavior
+        Clickable cl = blockInFront.GetComponent&lt;Clickable&gt;();
+
+        if ((cl == null) || (!cl.IsMinimized()))
         {
-            ButtonEffectTile p = FindEffectTileInCell(nextCell);
-            if (p != null)
-                cl.setOnEffectTile(p.getActiveType(),false);
-            nextBlockScalers = new Vector2Int((int)cl.getCurrentScalers().x, (int)cl.getCurrentScalers().y); //i hope this works
-        }  
-        
-        Vector3Int blockMoveTargetCall = new Vector3Int((int)math.floor(blockInFront.transform.position.x), (int)math.floor(blockInFront.transform.position.y) , 0) + new Vector3Int(dir.x, dir.y, 0);
-        Vector3Int blockWallTargetCell = nextCell + new Vector3Int(dir.x * nextBlockScalers.x, dir.y * nextBlockScalers.y, 0);
-        if ((IsBlocked(blockWallTargetCell) || FindPushableInCell(blockWallTargetCell) != null))
-            retu
-        // move block if pushable
-        Vector3 blockTargetPos = mytilemap.GetCellCenterWorld(blockMoveTargetCall);
-        StartCoroutine(MoveObject(blockInFront.transform, blockTargetPos, false));
-        if (cl != null) //Set New Effect Tile Behavior
-        {
-            ButtonEffectTile p = FindEffectTileInCell(blockMoveTargetCall);
-            if (p != null)
-                cl.setOnEffectTile(p.getActiveType(),true);
-        }   
+            Vector2Int nextBlockScalers = new Vector2Int(1, 1);
+
+            if (cl != null)
+            {
+                ButtonEffectTile p = FindEffectTileInCell(nextCell);
+                if (p != null)
+                    cl.setOnEffectTile(p.getActiveType(), false);
+
+                nextBlockScalers = new Vector2Int(
+                    (int)cl.getCurrentScalers().x,
+                    (int)cl.getCurrentScalers().y
+                );
+            }
+
+            Vector3Int blockMoveTargetCall =
+                new Vector3Int(
+                    (int)math.floor(blockInFront.transform.position.x),
+                    (int)math.floor(blockInFront.transform.position.y),
+                    0
+                ) + new Vector3Int(dir.x, dir.y, 0);
+
+            Vector3Int blockWallTargetCell =
+                nextCell + new Vector3Int(dir.x * nextBlockScalers.x, dir.y * nextBlockScalers.y, 0);
+
+            if (IsBlocked(blockWallTargetCell) || FindPushableInCell(blockWallTargetCell) != null)
+                return;
+
+            Vector3 blockTargetPos = mytilemap.GetCellCenterWorld(blockMoveTargetCall);
+            StartCoroutine(MoveObject(blockInFront.transform, blockTargetPos, false));
+
+            if (cl != null)
+            {
+                ButtonEffectTile p = FindEffectTileInCell(blockMoveTargetCall);
+                if (p != null)
+                    cl.setOnEffectTile(p.getActiveType(), true);
+            }
+        }
     }
 }</code></pre>
-                </section>
+              </section>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-copy">
+              <div class="project-meta">
+                <span class="pill">Narrative Tools</span>
+                <span class="project-status">Dialogue System</span>
               </div>
-            </article>
+              <h3>Last Call at Dawn</h3>
+              <p class="project-lead">
+                A story-first exploration project with branching conversations, mood-driven lighting, and
+                an emphasis on readable dialogue flow.
+              </p>
+              <p>
+                This slot works well for narrative work, puzzle games, or jam projects. You can keep the
+                summary short and still make the page feel rich by pairing it with a screenshot and a small
+                piece of production code.
+              </p>
+              <ul class="tag-list" aria-label="Project skills">
+                <li>Dialogue Systems</li>
+                <li>State Machines</li>
+                <li>Player Choice Tracking</li>
+              </ul>
+            </div>
 
-            <article class="project-card">
-              <div class="project-copy">
-                <div class="project-meta">
-                  <span class="pill">Narrative Tools</span>
-                  <span class="project-status">Dialogue System</span>
-                </div>
-                <h3>Last Call at Dawn</h3>
-                <p class="project-lead">
-                  A story-first exploration project with branching conversations, mood-driven lighting, and
-                  an emphasis on readable dialogue flow.
-                </p>
-                <p>
-                  This slot works well for narrative work, puzzle games, or jam projects. You can keep the
-                  summary short and still make the page feel rich by pairing it with a screenshot and a small
-                  piece of production code.
-                </p>
-                <ul class="tag-list" aria-label="Project skills">
-                  <li>Dialogue Systems</li>
-                  <li>State Machines</li>
-                  <li>Player Choice Tracking</li>
-                </ul>
+            <div class="project-showcase">
+              <div class="project-gallery">
+                <figure class="media-card media-featured">
+                  <img src="assets/last-call-at-dawn.svg"
+                    alt="Stylized placeholder art for the Last Call at Dawn project">
+                  <figcaption>Swap this with a scene still, dialogue screenshot, or trailer frame.</figcaption>
+                </figure>
               </div>
 
-              <div class="project-showcase">
-                <div class="project-gallery">
-                  <figure class="media-card media-featured">
-                    <img src="assets/last-call-at-dawn.svg"
-                      alt="Stylized placeholder art for the Last Call at Dawn project">
-                    <figcaption>Swap this with a scene still, dialogue screenshot, or trailer frame.</figcaption>
-                  </figure>
-                </div>
-
-                <section class="code-snippet" aria-label="Last Call at Dawn code sample">
-                  <div class="snippet-header">
-                    <div>
-                      <p class="snippet-label">Dialogue branching logic</p>
-                      <p class="snippet-caption">Short snippets work best when they reveal one clear idea.</p>
-                    </div>
-                    <button class="copy-snippet" type="button">Copy</button>
+              <section class="code-snippet" aria-label="Last Call at Dawn code sample">
+                <div class="snippet-header">
+                  <div>
+                    <p class="snippet-label">Dialogue branching logic</p>
+                    <p class="snippet-caption">Short snippets work best when they reveal one clear idea.</p>
                   </div>
-                  <pre><code>public DialogueNode GetNextNode(DialogueChoice choice)
+                  <button class="copy-snippet" type="button">Copy</button>
+                </div>
+                <pre><code>public DialogueNode GetNextNode(DialogueChoice choice)
 {
     if (!choice.RequirementsMet(playerFlags))
     {
@@ -201,50 +221,50 @@ if (blockInFront != null)
     visitedChoices.Add(choice.Id);
     return nodeLookup[choice.NextNodeId];
 }</code></pre>
-                </section>
+              </section>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-copy">
+              <div class="project-meta">
+                <span class="pill">Editor Tooling</span>
+                <span class="project-status">Pipeline Support</span>
               </div>
-            </article>
+              <h3>Ritual Workshop</h3>
+              <p class="project-lead">
+                An internal Unity tool for assembling encounters faster, validating data, and reducing
+                repetitive setup during iteration.
+              </p>
+              <p>
+                Including tools in your portfolio is valuable. It shows engineering judgment, iteration
+                habits, and an ability to improve team velocity instead of only shipping player-facing work.
+              </p>
+              <ul class="tag-list" aria-label="Project skills">
+                <li>Custom Inspectors</li>
+                <li>Workflow Automation</li>
+                <li>Content Validation</li>
+              </ul>
+            </div>
 
-            <article class="project-card">
-              <div class="project-copy">
-                <div class="project-meta">
-                  <span class="pill">Editor Tooling</span>
-                  <span class="project-status">Pipeline Support</span>
-                </div>
-                <h3>Ritual Workshop</h3>
-                <p class="project-lead">
-                  An internal Unity tool for assembling encounters faster, validating data, and reducing
-                  repetitive setup during iteration.
-                </p>
-                <p>
-                  Including tools in your portfolio is valuable. It shows engineering judgment, iteration
-                  habits, and an ability to improve team velocity instead of only shipping player-facing work.
-                </p>
-                <ul class="tag-list" aria-label="Project skills">
-                  <li>Custom Inspectors</li>
-                  <li>Workflow Automation</li>
-                  <li>Content Validation</li>
-                </ul>
+            <div class="project-showcase">
+              <div class="project-gallery">
+                <figure class="media-card media-featured">
+                  <img src="assets/ritual-workshop.svg"
+                    alt="Stylized placeholder art for the Ritual Workshop project">
+                  <figcaption>Tool screenshots help communicate process and problem solving.</figcaption>
+                </figure>
               </div>
 
-              <div class="project-showcase">
-                <div class="project-gallery">
-                  <figure class="media-card media-featured">
-                    <img src="assets/ritual-workshop.svg"
-                      alt="Stylized placeholder art for the Ritual Workshop project">
-                    <figcaption>Tool screenshots help communicate process and problem solving.</figcaption>
-                  </figure>
-                </div>
-
-                <section class="code-snippet" aria-label="Ritual Workshop code sample">
-                  <div class="snippet-header">
-                    <div>
-                      <p class="snippet-label">Validation helper</p>
-                      <p class="snippet-caption">Use this area for editor scripts, shaders, or gameplay code.</p>
-                    </div>
-                    <button class="copy-snippet" type="button">Copy</button>
+              <section class="code-snippet" aria-label="Ritual Workshop code sample">
+                <div class="snippet-header">
+                  <div>
+                    <p class="snippet-label">Validation helper</p>
+                    <p class="snippet-caption">Use this area for editor scripts, shaders, or gameplay code.</p>
                   </div>
-                  <pre><code>public static IEnumerable&lt;string&gt; ValidateEncounter(EncounterData data)
+                  <button class="copy-snippet" type="button">Copy</button>
+                </div>
+                <pre><code>public static IEnumerable&lt;string&gt; ValidateEncounter(EncounterData data)
 {
     if (data.SpawnPoints.Count == 0)
     {
@@ -256,53 +276,53 @@ if (blockInFront != null)
         yield return "Each wave needs at least one enemy entry.";
     }
 }</code></pre>
-                </section>
-              </div>
-            </article>
-          </div>
-        </section>
+              </section>
+            </div>
+          </article>
+        </div>
+      </section>
 
-        <section class="section" id="about">
-          <div class="section-heading">
-            <p class="eyebrow">About Me</p>
-            <h2>A short section that feels personal without getting crowded</h2>
-          </div>
+      <section class="section" id="about">
+        <div class="section-heading">
+          <p class="eyebrow">About Me</p>
+          <h2>A short section that feels personal without getting crowded</h2>
+        </div>
 
-          <div class="about-layout">
-            <article class="about-card about-card-primary">
-              <h3>Who you are</h3>
-              <p>
-                Replace this with your own voice. A strong portfolio intro usually says what kind of games
-                you like building, what disciplines you touch most often, and what kinds of teams or problems
-                energize you.
-              </p>
-              <p>
-                Example: "I'm a game developer focused on tactile mechanics, readable interfaces, and tools
-                that help ideas move from prototype to playable fast."
-              </p>
-            </article>
+        <div class="about-layout">
+          <article class="about-card about-card-primary">
+            <h3>Who you are</h3>
+            <p>
+              Replace this with your own voice. A strong portfolio intro usually says what kind of games
+              you like building, what disciplines you touch most often, and what kinds of teams or problems
+              energize you.
+            </p>
+            <p>
+              Example: "I'm a game developer focused on tactile mechanics, readable interfaces, and tools
+              that help ideas move from prototype to playable fast."
+            </p>
+          </article>
 
-            <article class="about-card">
-              <h3>What you bring</h3>
-              <ul class="about-list">
-                <li>Designing and implementing gameplay systems in Unity</li>
-                <li>Building UI and interaction flows that are easy to read</li>
-                <li>Creating tools that speed up iteration for solo or team projects</li>
-                <li>Breaking down technical work into player-facing outcomes</li>
-              </ul>
-            </article>
+          <article class="about-card">
+            <h3>What you bring</h3>
+            <ul class="about-list">
+              <li>Designing and implementing gameplay systems in Unity</li>
+              <li>Building UI and interaction flows that are easy to read</li>
+              <li>Creating tools that speed up iteration for solo or team projects</li>
+              <li>Breaking down technical work into player-facing outcomes</li>
+            </ul>
+          </article>
 
-            <article class="about-card">
-              <h3>Nice things to add later</h3>
-              <ul class="about-list">
-                <li>A resume link or downloadable PDF</li>
-                <li>Itch.io, GitHub, LinkedIn, or Steam buttons</li>
-                <li>A contact section or email button</li>
-                <li>Playable web builds or short trailers</li>
-              </ul>
-            </article>
-          </div>
-        </section>
+          <article class="about-card">
+            <h3>Nice things to add later</h3>
+            <ul class="about-list">
+              <li>A resume link or downloadable PDF</li>
+              <li>Itch.io, GitHub, LinkedIn, or Steam buttons</li>
+              <li>A contact section or email button</li>
+              <li>Playable web builds or short trailers</li>
+            </ul>
+          </article>
+        </div>
+      </section>
     </main>
 
     <footer class="site-footer">
