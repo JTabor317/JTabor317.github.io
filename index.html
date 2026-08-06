@@ -1,3 +1,5 @@
+---
+---
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,7 +9,7 @@
   <meta name="description"
     content="A clean GitHub Pages portfolio for showcasing game development projects, screenshots, and code snippets.">
   <title>Joseph Tabor | Game Dev Portfolio</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="{{ '/styles.css' | relative_url }}">
 </head>
 
 <body>
@@ -46,327 +48,13 @@
           </p>
         </div>
 
-        <div class="project-stack">
-          <!-- Duplicate a .project-card block to add more projects -->
-          <article class="project-card">
-            <div class="project-top">
-              <div class="project-copy">
-                <div class="project-meta">
-                  <span class="pill">Unity / C#</span>
-                  <span class="project-status">Intro to Game Dev Final Project</span>
-                </div>
-                <h3>Windowed</h3>
-                <p class="project-lead">
-                  A puzzle game based on the icons in the corner of a program window. 2D environment with a character
-                  that has the ability to push, close, resize, and minimize blocks to solve the puzzles.
-                </p>
-                <p>
-                  I worked on designing and implementing the core puzzle systems, focusing on how players interact with
-                  the environment through both character movement and direct cursor input.
-                  The main challenge was creating intuitive mechanics based on familiar UI symbols (minimize, close,
-                  resize) while ensuring they translated into meaningful and solvable puzzle interactions.
-                  To address this, I helped develop a grid-based system that simplified movement and interactions,
-                  reducing edge cases and allowing for more controlled puzzle design.
-                  I also contributed to implementing core mechanics such as clickable blocks, state-changing buttons,
-                  and environmental constraints like glass barriers, all of which were introduced progressively to guide
-                  player understanding.
-                  One key design consideration was preventing soft-lock scenarios, which led to the addition of a reset
-                  mechanic and a more intentional level design.
-                  This project was interesting to work on, as it had the challenge of conveying what UI elements would do
-                  in a gameplay scenario while still making them feel satisfying and fun to interact with.
-                </p>
-                <ul class="tag-list" aria-label="Project skills">
-                  <li>Movement Systems</li>
-                  <li>Interaction Design</li>
-                </ul>
-              </div>
-
-              <div class="project-showcase">
-                <div class="project-gallery">
-                  <figure class="media-card media-featured">
-                    <a class="media-trigger" href="assets/windowedss.png" aria-label="Open Windowed screenshot">
-                      <img src="assets/windowedss.png" alt="In-game screen shot of a puzzle">
-                    </a>
-                    <figcaption>In-game screen shot of one of the puzzles.</figcaption>
-                  </figure>
-                  <figure class="media-card">
-                    <a class="media-trigger" href="assets/windowedlevel1.png" aria-label="Open Windowed level layout">
-                      <img src="assets/windowedlevel1.png" alt="Full level 1">
-                    </a>
-                    <figcaption>Full level 1 layout.</figcaption>
-                  </figure>
-                </div>
-              </div>
-            </div>
-
-            <section class="code-snippet project-code" aria-label="Windowed code sample">
-              <div class="snippet-header">
-                <div>
-                  <p class="snippet-label">C# grid-based movement snippet</p>
-                  <p class="snippet-caption">The main function used to move the character and push blocks</p>
-                </div>
-                <button class="copy-snippet" type="button">Copy</button>
-              </div>
-              <pre><code>public void TryStep(Vector2 inputDir)
-{
-    if (isMoving || mytilemap == null)
-        return;
-
-    // Snap to cardinal direction.
-    Vector2Int dir = ToCardinal(inputDir);
-    if (dir == Vector2Int.zero)
-        return;
-
-    // Current cell.
-    Vector3Int currentCell = mytilemap.WorldToCell(transform.position);
-    Vector3Int nextCell = currentCell + new Vector3Int(dir.x, dir.y, 0);
-
-    // Wall check.
-    if (IsBlocked(nextCell))
-        return;
-
-    // Check for pushable.
-    Pushable blockInFront = FindPushableInCell(nextCell);
-
-    if (blockInFront != null)
-    {
-        Clickable cl = blockInFront.GetComponent&lt;Clickable&gt;();
-
-        if ((cl == null) || (!cl.IsMinimized()))
-        {
-            Vector2Int nextBlockScalers = new Vector2Int(1, 1);
-
-            if (cl != null)
-            {
-                ButtonEffectTile p = FindEffectTileInCell(nextCell);
-                if (p != null)
-                    cl.setOnEffectTile(p.getActiveType(), false);
-
-                nextBlockScalers = new Vector2Int(
-                    (int)cl.getCurrentScalers().x,
-                    (int)cl.getCurrentScalers().y
-                );
-            }
-
-            Vector3Int blockMoveTargetCall =
-                new Vector3Int(
-                    (int)math.floor(blockInFront.transform.position.x),
-                    (int)math.floor(blockInFront.transform.position.y),
-                    0
-                ) + new Vector3Int(dir.x, dir.y, 0);
-
-            Vector3Int blockWallTargetCell =
-                nextCell + new Vector3Int(dir.x * nextBlockScalers.x, dir.y * nextBlockScalers.y, 0);
-
-            if (IsBlocked(blockWallTargetCell) || FindPushableInCell(blockWallTargetCell) != null)
-                return;
-
-            Vector3 blockTargetPos = mytilemap.GetCellCenterWorld(blockMoveTargetCall);
-            StartCoroutine(MoveObject(blockInFront.transform, blockTargetPos, false));
-
-            if (cl != null)
-            {
-                ButtonEffectTile p = FindEffectTileInCell(blockMoveTargetCall);
-                if (p != null)
-                    cl.setOnEffectTile(p.getActiveType(), true);
-            }
-        }
-    }
-}</code></pre>
-            </section>
-
-            <section class="project-video" aria-label="Windowed gameplay video">
-              <div class="video-header">
-                <div>
-                  <p class="video-label">Gameplay Video</p>
-                  <p class="video-caption">Demo of the first few levels.</p>
-                </div>
-              </div>
-              <div class="video-frame">
-                <iframe
-                  title="Windowed gameplay video"
-                  loading="lazy"
-                  allowfullscreen
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  referrerpolicy="strict-origin-when-cross-origin"
-                  src="https://www.youtube-nocookie.com/embed/i4oEKTNzUsE"
-                ></iframe>
-              </div>
-            </section>
-          </article>
-
-          <article class="project-card">
-            <div class="project-top">
-              <div class="project-copy">
-                <div class="project-meta">
-                  <span class="pill">Unity / C#</span>
-                  <span class="project-status">Undergrad Research (WIP)</span>
-                </div>
-                <h3>Tokenverse</h3>
-                <p class="project-lead">
-                  A game about AI systems and their effects on users. The player assumes the role of a AI agent, answering request through the metaphor of a virtual bar. 
-                </p>
-                <p>
-                  This project is still a work in progress, but my role on the team is as one of two programmers. From the start, this project had a clear identity, but a lot the 
-                  the inner specifics still had to be worked out. In the first few weeks, I spent working with our gameplay designers to finalize gameplay interactions that I would eventually
-                  be implementing. The game is divided into two main modes, "Normal" and "Overload", and I was assigned to work on the Normal mode gameplay loop. It consists of the bar setting
-                  in which the player reads the request of the AI model's user and correctly gives or denies their request (giving food/drink or not). Similar to Paper's Please, this required
-                  an evaluation system as well as desk movement/interaction with evidence objects. The game was set in 3D, which gave a particular challenge when trying to find a satisfying
-                  object movement system while the user was at the desk. I initially started with a dragging system, but ran into problems with translating 2D mouse movement to the angled 3D space.
-                  For context, the user had to not only move stuff on the plane of the desk but also hand objects to the customer and use things that were outside of the desk's boundaries. 
-                  This system quickly evolved into a more restrictive version where selecting objects and placing them in one of several pre-selected locations. This allowed movement to be much cleaner
-                  but still satisfying for the player. As things finished up for the main gameplay loop of normal mode, my duties shifted to connecting my teammates "overload" mode and begin
-                  to fill in the inbetween sections as well. This is what we are currently working on, as well as implementing all of the models, animations, and sound effects. While not finished,
-                  I've enjoyed my work so far on the project and am excited to fully finish it in the coming months. 
-                </p>
-                <ul class="tag-list" aria-label="Project skills">
-                  <li>Interaction Design</li>
-                  <li>Gameplay Systems</li>
-                </ul>
-              </div>
-
-              <div class="project-showcase">
-                <div class="project-gallery">
-                  <figure class="media-card media-featured">
-                    <a class="media-trigger" href="assets/tokenverseimage.png" aria-label="Tokenverse">
-                      <img src="assets/tokenverseimage.png"
-                        alt="Screenshot of Normal mode area">
-                    </a>
-                    <figcaption>Not sure how much I can show but here is the setting of the game.</figcaption>
-                  </figure>
-                </div>
-              </div>
-            </div>
-
-            <section class="code-snippet project-code" aria-label="Last Call at Dawn code sample">
-              <div class="snippet-header">
-                <div>
-                  <p class="snippet-label">Case Logic</p>
-                  <p class="snippet-caption">Function that handles case evaluation and some game flow logic.</p>
-                </div>
-                <button class="copy-snippet" type="button">Copy</button>
-              </div>
-              <pre><code>private void ResolveCase(EvidenceObject deliveredEvidence)
-    {
-        if (isGameOver)
-        {
-            return;
-        }
-
-        if (currentOrder == null)
-        {
-            Debug.LogWarning("ResolveCase called without an active order.");
-            return;
-        }
-
-        ExpectedDecision expectedDecision = DetermineExpectedDecision();
-        bool correct = expectedDecision.Matches(decision);
-        bool attemptedApproval = decision.AttemptedApproval;
-
-        if (correct)
-        {
-            Debug.Log("CORRECT DECISION");
-        }
-        else
-        {
-            Debug.LogWarning($"INCORRECT DECISION. Expected {expectedDecision}, got {DescribeDecision()}.");
-        }
-
-        evidenceSpawner.ClearDesk(deliveredEvidence);
-        IncrementMistakeCounter(!correct);
-
-        if (isGameOver)
-        {
-            if (deliveredEvidence != null)
-            {
-                Destroy(deliveredEvidence.gameObject);
-            }
-
-            ClearCase();
-            return;
-        }
-
-        npcQueue.CompleteCurrentNPC(
-            correct,
-            attemptedApproval,
-            expectedDecision.ApprovalType,
-            deliveredEvidence
-        );
-        ClearCase();
-}</code></pre>
-            </section>
-
-            <!--
-            <section class="project-video" aria-label="Last Call at Dawn gameplay video">
-              <div class="video-header">
-                <div>
-                  <p class="video-label">Normal Mode Gameplay</p>
-                  <p class="video-caption">Prototype normal mode gameplay.</p>
-                </div>
-              </div>
-              <div class="video-frame">
-                <iframe
-                  title="Last Call at Dawn gameplay video"
-                  loading="lazy"
-                  allowfullscreen
-                  referrerpolicy="strict-origin-when-cross-origin"
-                  srcdoc="<!DOCTYPE html><html lang='en'><body style='margin:0;display:grid;place-items:center;min-height:100vh;background:#11202a;color:#f7efe4;font-family:Trebuchet MS,Segoe UI,sans-serif;'><div style='text-align:center;padding:2rem;line-height:1.6;'><strong style='display:block;font-size:1.2rem;margin-bottom:0.75rem;'>Video Embed Placeholder</strong><span>Replace this iframe with your project video embed URL.</span></div></body></html>"
-                ></iframe>
-              </div>
-            </section>
-            -->
-          </article>
-
-          <article class="project-card">
-            <div class="project-top">
-              <div class="project-copy">
-                <div class="project-meta">
-                  <span class="pill">Blender</span>
-                  <span class="project-status">Game Studio Project (WIP)</span>
-                </div>
-                <h3>Window Pains</h3>
-                <p class="project-lead">
-                  A party game with an objective on cleaning a skyscraper under a time limit and without falling off. 
-                </p>
-                <p>
-                  For my game studio class, we partnered up with 5 other people and were tasked with making a game demo by the end of the semester. To meet 
-                  the team's needs, I had to take a step out of my comfort zone and be the team's main 3D modeler. I had very limited experience at the time of starting the project,
-                  but I was not discouraged. My team was all on the same page, and many of us wanted to take this project a step further and end up publishing our game at a later date.
-                  Being still new to modeling, it took quite a while before I was able to get the skyscraper (our main asset) looking how I wanted. As I slowly got the feel for Blender,
-                  my times between models shortened, and the quality of work increased. The main challenge so far in the project was finding a balanced workflow of experimenting with the software,
-                  and also creating assets that my team could use. Many of the current assets had multiple iterations for a variety of reasons including, optimization user feedback, or style alignment. 
-                  I'll continuing updating this as the semester progresses and the project evolves but for now I'll showcase some screenshots of the model in blender and in engine.
-                </p>
-                <ul class="tag-list" aria-label="Project skills">
-                  <li>3D modeling</li>
-                  <li>Blender to Unity Workflow</li>
-                  <li>Prefab Construction</li>
-                </ul>
-              </div>
-
-              <div class="project-showcase">
-                <div class="project-gallery">
-                  <figure class="media-card media-featured">
-                    <a class="media-trigger" href="assets/building mock.png" aria-label="Early Building Mock">
-                      <img src="assets/building mock.png"
-                        alt="Early Building Mock">
-                    </a>
-                    <figcaption>Early building mock I made in the first few weeks.</figcaption>
-                  </figure>
-
-                  <figure class="media-card media-featured">
-                    <a class="media-trigger" href="assets/Comic_Building_Style.png" aria-label="Updated Style">
-                      <img src="assets/Comic_Building_Style.png"
-                        alt="Updated Style">
-                    </a>
-                    <figcaption>The current style and model of the building with shaders.</figcaption>
-                  </figure>
-
-                </div>
-              </div>
-            </div>
-          </article>
-
+        <div class="project-grid">
+          {% assign portfolio_projects = site.projects | sort: "order" %}
+          {% for project in portfolio_projects %}
+            {% include project-tile.html project=project %}
+          {% endfor %}
+        </div>
+      </section>
 
       <section class="section" id="about">
         <div class="section-heading">
@@ -407,10 +95,19 @@
             <ul class="about-list">
               <li>
                 <div class="about-link-row">
-                  <a class="link-button link-button-secondary" href="assets/Joseph Tabor Resume.pdf" target="_blank" rel="noopener noreferrer">
+                  <a
+                    class="link-button link-button-secondary"
+                    href="{{ '/assets/Joseph Tabor Resume.pdf' | relative_url }}"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     View Resume
                   </a>
-                  <a class="link-button link-button-primary" href="assets/Joseph Tabor Resume.pdf" download>
+                  <a
+                    class="link-button link-button-primary"
+                    href="{{ '/assets/Joseph Tabor Resume.pdf' | relative_url }}"
+                    download
+                  >
                     Download Resume PDF
                   </a>
                 </div>
@@ -446,24 +143,9 @@
     </footer>
   </div>
 
-  <div class="lightbox" id="lightbox" hidden aria-hidden="true" style="display: none;">
-    <div class="lightbox-backdrop" data-lightbox-close></div>
-    <div class="lightbox-dialog" role="dialog" aria-modal="true" aria-label="Project image viewer">
-      <button class="lightbox-close" type="button" data-lightbox-close aria-label="Back to project">Back to project</button>
-      <button class="lightbox-nav lightbox-prev" type="button" aria-label="Previous image">Prev</button>
-      <figure class="lightbox-figure">
-        <img class="lightbox-image" src="" alt="">
-        <figcaption class="lightbox-caption">
-          <p class="lightbox-title"></p>
-          <p class="lightbox-blurb"></p>
-        </figcaption>
-      </figure>
-      <button class="lightbox-nav lightbox-next" type="button" aria-label="Next image">Next</button>
-      <p class="lightbox-counter" aria-live="polite"></p>
-    </div>
-  </div>
+  {% include lightbox.html %}
 
-  <script src="script.js"></script>
+  <script src="{{ '/script.js' | relative_url }}"></script>
 </body>
 
 </html>

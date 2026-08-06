@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="{{ page.lead | escape }}">
+  <title>{{ page.title | escape }} | Joseph Tabor</title>
+  <link rel="stylesheet" href="{{ '/styles.css' | relative_url }}">
+</head>
+
+<body class="project-page">
+  <div class="page-shell">
+    <header class="site-header">
+      <a class="brand" href="{{ '/' | relative_url }}">Joseph Tabor</a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="{{ '/#projects' | relative_url }}">Projects</a>
+        <a href="{{ '/#about' | relative_url }}">About Me</a>
+      </nav>
+    </header>
+
+    <main class="project-detail" data-gallery-group>
+      <a class="project-back-link" href="{{ '/#projects' | relative_url }}">&larr; Back to all projects</a>
+
+      <section class="project-detail-hero">
+        <div class="project-detail-copy">
+          <div class="project-meta">
+            <span class="pill">{{ page.technology | escape }}</span>
+            <span class="project-status">{{ page.status | escape }}</span>
+          </div>
+          <p class="eyebrow">Project Case Study</p>
+          <h1 data-project-title>{{ page.title | escape }}</h1>
+          <p class="project-detail-lead">{{ page.lead | escape }}</p>
+          <ul class="tag-list" aria-label="{{ page.title | escape }} skills">
+            {% for skill in page.skills %}
+            <li>{{ skill | escape }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+
+        {% if page.logo %}
+        <figure class="project-cover project-logo">
+          <img src="{{ page.logo.src | relative_url }}" alt="{{ page.logo.alt | escape }}">
+        </figure>
+        {% else %}
+        {% assign cover_image = page.images | first %}
+        <figure class="project-cover">
+          <a
+            class="media-trigger"
+            data-gallery-index="0"
+            href="{{ cover_image.src | relative_url }}"
+            aria-label="{{ cover_image.aria_label | default: cover_image.alt | escape }}"
+          >
+            <img src="{{ cover_image.src | relative_url }}" alt="{{ cover_image.alt | escape }}">
+          </a>
+        </figure>
+        {% endif %}
+      </section>
+
+      <section class="detail-panel project-story" aria-labelledby="project-story-heading">
+        <div class="detail-heading">
+          <p class="eyebrow">Role &amp; Contributions</p>
+          <h2 id="project-story-heading">About the project</h2>
+        </div>
+        <div class="project-narrative">
+          {{ content }}
+        </div>
+      </section>
+
+      {% if page.code %}
+      <section class="code-snippet project-detail-code" aria-label="{{ page.title | escape }} code sample">
+        <div class="snippet-header">
+          <div>
+            <p class="snippet-label">{{ page.code.label | escape }}</p>
+            <p class="snippet-caption">{{ page.code.caption | escape }}</p>
+          </div>
+          <button class="copy-snippet" type="button">Copy</button>
+        </div>
+        {% capture code_sample %}{% include {{ page.code.file }} %}{% endcapture %}
+        <pre><code class="language-{{ page.code.language | default: 'text' | escape }}">{{ code_sample | strip | escape }}</code></pre>
+      </section>
+      {% endif %}
+
+      {% if page.video %}
+      <section class="project-video project-detail-video" aria-label="{{ page.title | escape }} gameplay video">
+        <div class="video-header">
+          <div>
+            <p class="video-label">{{ page.video.label | escape }}</p>
+            <p class="video-caption">{{ page.video.caption | escape }}</p>
+          </div>
+        </div>
+        <div class="video-frame">
+          {% if page.video.file %}
+          <video
+            controls
+            playsinline
+            preload="metadata"
+            aria-label="{{ page.video.title | escape }}"
+            {% if page.video.poster %}poster="{{ page.video.poster | relative_url }}"{% endif %}
+          >
+            <source
+              src="{{ page.video.file | relative_url }}"
+              type="{{ page.video.type | default: 'video/mp4' | escape }}"
+            >
+            Your browser does not support embedded video.
+            <a href="{{ page.video.file | relative_url }}">Download the video</a> instead.
+          </video>
+          {% elsif page.video.url %}
+          <iframe
+            title="{{ page.video.title | escape }}"
+            loading="lazy"
+            allowfullscreen
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            src="{{ page.video.url | escape }}"
+          ></iframe>
+          {% endif %}
+        </div>
+      </section>
+      {% endif %}
+
+      {% if page.images.size > 0 %}
+      <section class="detail-panel" aria-labelledby="project-gallery-heading">
+        <div class="detail-heading">
+          <p class="eyebrow">Project Gallery</p>
+          <h2 id="project-gallery-heading">More from {{ page.title | escape }}</h2>
+        </div>
+        <div class="project-gallery project-detail-gallery">
+          {% for image in page.images %}
+          <figure class="media-card project-gallery-item{% if forloop.index > 3 %} project-gallery-hidden{% endif %}">
+            <a
+              class="media-trigger"
+              data-gallery-item
+              data-gallery-index="{{ forloop.index0 }}"
+              href="{{ image.src | relative_url }}"
+              aria-label="{{ image.aria_label | default: image.alt | escape }}"
+            >
+              <img src="{{ image.src | relative_url }}" alt="{{ image.alt | escape }}">
+            </a>
+            <figcaption>{{ image.caption | escape }}</figcaption>
+          </figure>
+          {% endfor %}
+        </div>
+      </section>
+      {% endif %}
+
+      <a class="button button-secondary project-return" href="{{ '/#projects' | relative_url }}">
+        Back to all projects
+      </a>
+    </main>
+
+    <footer class="site-footer">
+      <p>Built for GitHub Pages.</p>
+      <p>&copy; <span id="year">2026</span> Joseph Tabor</p>
+    </footer>
+  </div>
+
+  {% include lightbox.html %}
+
+  <script src="{{ '/script.js' | relative_url }}"></script>
+</body>
+
+</html>

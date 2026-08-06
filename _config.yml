@@ -1,0 +1,19 @@
+title: "Joseph Tabor | Game Dev Portfolio"
+description: A portfolio showcasing game development projects, screenshots, and code samples.
+url: "https://jtabor317.github.io"
+baseurl: ""
+
+collections:
+  projects:
+    output: true
+    permalink: /projects/:name/
+
+defaults:
+  - scope:
+      path: ""
+      type: projects
+    values:
+      layout: project
+
+exclude:
+  - README.md

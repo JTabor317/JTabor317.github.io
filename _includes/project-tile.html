@@ -1,0 +1,29 @@
+<article class="project-tile">
+  <a class="project-tile-link" href="{{ include.project.url | relative_url }}">
+    <div class="project-tile-media{% if include.project.logo %} project-tile-logo{% endif %}">
+      {% if include.project.logo %}
+      {% assign tile_image = include.project.logo %}
+      {% else %}
+      {% assign tile_image = include.project.images | first %}
+      {% endif %}
+      <img src="{{ tile_image.src | relative_url }}" alt="{{ tile_image.alt | escape }}">
+    </div>
+
+    <div class="project-tile-body">
+      <div class="project-tile-meta">
+        <span class="pill">{{ include.project.technology | escape }}</span>
+        <span class="project-status">{{ include.project.status | escape }}</span>
+      </div>
+      <h3>{{ include.project.title | escape }}</h3>
+      <p>{{ include.project.lead | escape }}</p>
+
+      <ul class="tag-list project-tile-tags" aria-label="{{ include.project.title | escape }} skills">
+        {% for skill in include.project.skills %}
+        <li>{{ skill | escape }}</li>
+        {% endfor %}
+      </ul>
+
+      <span class="project-tile-cta" aria-hidden="true">View project <span>&rarr;</span></span>
+    </div>
+  </a>
+</article>
